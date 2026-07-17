@@ -1,26 +1,98 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+  /* nuts.nl-huisstijl: getinte lichte achtergrond, witte kaarten, donkere inkt */
+  --plane: #f1f9fb;
+  --surface: #ffffff;
+  --ink: #101828;
+  --ink-secondary: #475467;
+  --ink-muted: #667085;
+  --hairline: rgba(16, 24, 40, 0.1);
+  --gridline: #e4e7ec;
+
+  /* nuts.nl-merkkleuren */
+  --brand: #d15949;
+  --brand-strong: #b24a3b;
+  --brand-contrast: #ffffff;
+  --accent: #fec248;
+
+  /* statuskleuren (vast, beide modi) */
+  --status-good: #0ca30c;
+  --status-warning: #fab219;
+  --status-serious: #ec835a;
+  --status-critical: #d03b3b;
+
+  /* sturingsdimensies (categorische slots 1–4) */
+  --dim-1: #2a78d6;
+  --dim-2: #1baf7a;
+  --dim-3: #eda100;
+  --dim-4: #008300;
+
+  /* levensfase toepassing — ordinale blauwreeks */
+  --fase-verkenning: #86b6ef;
+  --fase-ontwikkeling: #5598e7;
+  --fase-pilot: #2a78d6;
+  --fase-productie: #184f95;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-plane: var(--plane);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-secondary: var(--ink-secondary);
+  --color-ink-muted: var(--ink-muted);
+  --color-hairline: var(--hairline);
+  --color-gridline: var(--gridline);
+  --color-brand: var(--brand);
+  --color-brand-strong: var(--brand-strong);
+  --color-brand-contrast: var(--brand-contrast);
+  --color-accent: var(--accent);
+  --color-status-good: var(--status-good);
+  --color-status-warning: var(--status-warning);
+  --color-status-serious: var(--status-serious);
+  --color-status-critical: var(--status-critical);
+  --color-dim-1: var(--dim-1);
+  --color-dim-2: var(--dim-2);
+  --color-dim-3: var(--dim-3);
+  --color-dim-4: var(--dim-4);
+  --color-fase-verkenning: var(--fase-verkenning);
+  --color-fase-ontwikkeling: var(--fase-ontwikkeling);
+  --color-fase-pilot: var(--fase-pilot);
+  --color-fase-productie: var(--fase-productie);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-red-hat-display);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    color-scheme: dark;
+    --plane: #0c1116;
+    --surface: #151b23;
+    --ink: #f2f4f7;
+    --ink-secondary: #cdd5df;
+    --ink-muted: #98a2b3;
+    --hairline: rgba(255, 255, 255, 0.1);
+    --gridline: #262d36;
+
+    --brand: #b24a3b;
+    --brand-strong: #9c4034;
+
+    --dim-1: #3987e5;
+    --dim-2: #199e70;
+    --dim-3: #c98500;
+    --dim-4: #008300;
+
+    /* op donker keert de reeks: productie het meest aanwezig */
+    --fase-verkenning: #184f95;
+    --fase-ontwikkeling: #1c5cab;
+    --fase-pilot: #3987e5;
+    --fase-productie: #86b6ef;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--plane);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
 }
